@@ -31,12 +31,12 @@ First, let us leave our current local repository,
 $ cd ..
 $ ls
 ```
-{: .language-bash}
+
 
 ```
 $ git-papers
 ```
-{: .output}
+
 
 And let us clone our repository again, but this time specify the local
 directory name,
@@ -45,19 +45,19 @@ directory name,
 $ git clone https://github.com/<USERNAME>/git-papers.git nha-papers
 Cloning into 'nha-papers'...
 ```
-{: .language-bash}
+
 
 So we now have two clones of our repository,
 
 ```
 $ ls
 ```
-{: .language-bash}
+
 
 ```
 $ git-papers nha-papers
 ```
-{: .output}
+
 
 Let's pretend these clones are on two separate machines!
 So then we have 3 versions of our repository:
@@ -73,7 +73,7 @@ $ git add journal.md
 $ git commit -m "Add figures"
 $ git push
 ```
-{: .language-bash}
+
 
 Now let's change directory to our other clone and `fetch` the commits from our remote repository:
 
@@ -81,14 +81,14 @@ Now let's change directory to our other clone and `fetch` the commits from our r
 $ cd ../nha-papers		# Switch to the other directory
 $ git fetch
 ```
-{: .language-bash}
+
 
 We can now see what the differences are by doing,
 
 ```
 $ git diff origin/master
 ```
-{: .language-bash}
+
 
 which compares our `master` branch with the `origin/master` branch.
 `origin/master` is the name of the `master` branch in `origin`
@@ -101,7 +101,7 @@ Instead we get a *fast-forward* merge.
 ```
 $ git merge origin/master
 ```
-{: .language-bash}
+
 
 ```
 Updating 0cc2a2d..7c239c3
@@ -109,14 +109,14 @@ Fast-forward
  journal.md | 4 ++++
  1 file changed, 4 insertions(+)
 ```
-{: .output}
+
 
 We can inspect the file to confirm that we have our changes.
 
 ```
 $ cat journal.md
 ```
-{: .language-bash}
+
 
 Note that, as a short-hand,
 we can do a `git pull` which does a `git fetch` followed by a `git merge`.
@@ -133,7 +133,7 @@ $ git push origin master
 $ cd ../git-papers			# Switch back to the git-papers directory
 $ git pull origin master	# Get changes from remote repository
 ```
-{: .language-bash}
+
 
 This is the same scenario as before, so we get another fast-forward merge!
 
@@ -143,7 +143,7 @@ We can check that we have our changes:
 $ cat journal.md
 $ git log
 ```
-{: .language-bash}
+
 
 > ## `Fetch` vs `pull`
 > If `git pull` is a shortcut for `git fetch` followed by `git merge` then, why would
@@ -154,7 +154,7 @@ $ git log
 >
 > Fetching first lets you inspect the changes
 > before deciding what you want to do with them.
-{: .callout}
+
 
 ### Conflicts and how to resolve them
 
@@ -170,7 +170,7 @@ $ git add journal.md
 $ git commit -m "Add author affiliations"
 $ git push origin master
 ```
-{: .language-bash}
+
 
 Now let us suppose, at a later date,
 we use our other repository (the `nha-papers` clone) on another machine,
@@ -186,7 +186,7 @@ $ git add journal.md
 $ git commit -m "Change the first author" journal.md
 $ git push origin master
 ```
-{: .language-bash}
+
 ```
 To https://github.com/<USERNAME>/git-papers.git
  ! [rejected]        master -> master (fetch first)
@@ -197,7 +197,7 @@ hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
-{: .output}
+
 
 Our push fails, as we've not yet pulled down our changes from our remote
 repository!
@@ -207,7 +207,7 @@ Before pushing we should always pull, so let's do that...
 ```
 $ git pull origin master
 ```
-{: .language-bash}
+
 
 and we get:
 
@@ -216,7 +216,7 @@ Auto-merging journal.md
 CONFLICT (content): Merge conflict in journal.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
-{: .output}
+
 
 As we saw earlier, with the fetch and merge,
 `git pull` pulls down changes from the
@@ -232,7 +232,7 @@ If we look at the status:
 ```
 $ git status
 ```
-{: .language-bash}
+
 
 we can see that our file is listed as *Unmerged* and if we look at
 *journal.md*, we see something like:
@@ -260,7 +260,7 @@ $ git add journal.md		# Stage the file
 $ git commit			# Commit to mark the conflict as resolved
 $ git push origin master
 ```
-{: .language-bash}
+
 
 ... all goes well!
 If we now go to GitHub and click on the "Overview" tab,
@@ -278,4 +278,4 @@ so both copies are up to date:
 $ cd ../git-papers			# Switch to 'git-papers' directory
 $ git pull origin master	# Merge remote branch into local
 ```
-{: .language-bash}
+

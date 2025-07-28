@@ -22,12 +22,12 @@ You might have noticed the term *branch* in status messages:
 ~~~
 $ git status
 ~~~
-{: .language-bash}
+
 ~~~
 On branch master
 nothing to commit (working directory clean)
 ~~~
-{: .output}
+
 
 and when we wanted to get back to our most recent version of the repository, we
 used `git checkout master`.
@@ -65,11 +65,11 @@ rather than in the master.
 ~~~
 $ git checkout -b paperWJohn
 ~~~
-{: .language-bash}
+
 ~~~
 Switched to a new branch 'paperWJohn'
 ~~~
-{: .output}
+
 
 We're going to change the title of the paper and update the author list (adding John Smith).
 However, before we get started it's a good practice to check that we're working
@@ -78,12 +78,12 @@ on the right branch.
 ~~~
 $ git branch			# Double check which branch we are working on
 ~~~
-{: .language-bash}
+
 ~~~
   master
 * paperWJohn
 ~~~
-{: .output}
+
 
 The * indicates which branch we're currently in. Now let's make the changes to the paper.
 
@@ -92,18 +92,18 @@ $ nano journal.md		# Change title and add co-author
 $ git add journal.md
 $ git commit			# "Modify title and add John as co-author"
 ~~~
-{: .language-bash}
+
 
 If we now want to work in our `master` branch. We can switch back by using:
 
 ~~~
 $ git checkout master
 ~~~
-{: .language-bash}
+
 ~~~
 Switched to branch 'master'
 ~~~
-{: .output}
+
 
 
 Notice that the changes that are in the `paperWJohn` branch are not present here. They exist only in that branch! When switching between branches, git literally goes to look for that branch inside of the `.git` directory, and like checking out a book from the library, it checks that state of the filesystem out of the repository to replace the current state.
@@ -115,6 +115,6 @@ To combine the changes that are in this other branch with your previous work, yo
 ~~~
 $ git merge paperWJohn
 ~~~
-{: .language-bash}
+
 
 This adds into your current branch the work that was, until now, only on that other branch. And you can keep going from here.
