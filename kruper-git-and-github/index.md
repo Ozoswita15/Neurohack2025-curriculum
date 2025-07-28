@@ -26,7 +26,6 @@ root: .
 > You will need a GitHub account for this session.
 > Please [sign up for an account](https://github.com/)
 > if you do not already have one.
-{: .prereq}
 
 ## Resources
 

@@ -64,12 +64,12 @@ For this we will use the command line interface.
 > * you will be able to use Git on any computer
 > (e.g. remotely accessing HPC systems, which generally only have Linux command line access)
 > * you will be able to use any GUI, rather than just the one you have learned
-{: .callout}
+
 
 ## Setting up Git
 
 If you're using the course JupyterHub, git should already be installed.
-If you need to install git locally, instructions are under [setup]({{ page.root }}/setup).
+If you need to install git locally, instructions are under [setup](../../shared/docs/git-setup.html).
 
 ## Tell Git who we are
 
@@ -83,7 +83,7 @@ So, we need to tell Git about who we are:
 $ git config --global user.name "Your Name" 			# Put quotation marks around your name
 $ git config --global user.email yourname@yourplace.org
 ~~~
-{: .language-bash}
+
 
 Note that you need to enclose your name in quotation marks!
 
@@ -100,7 +100,7 @@ For the purpose of this session we'll assume you're on the course JupyterHub and
 ~~~
 $ git config --global core.editor nano
 ~~~
-{: .language-bash}
+
 
 To set up alternative editors, follow the same notation e.g.
 `git config --global core.editor notepad`, `git config --global core.editor vi`,
@@ -122,7 +122,7 @@ $ cat ~/.gitconfig
     [core]
         editor = nano
 ~~~
-{: .language-bash}
+
 
 **These global configuration settings will apply to any new Git repository
 you create on the course JupyterHub.**
@@ -145,7 +145,7 @@ $ pwd								# Print working directory (output should be /home/jovyan)
 $ mkdir git-papers
 $ cd git-papers
 ```
-{: .language-bash}
+
 
 Now, we need to set up this directory up to be a Git repository (or "initiate
 the repository"):
@@ -153,11 +153,11 @@ the repository"):
 ~~~
 $ git init
 ~~~
-{: .language-bash}
+
 ~~~
 Initialized empty Git repository in /home/user/git-papers/.git/
 ~~~
-{: .output}
+
 
 The directory "git-papers" is now our working directory.
 
@@ -166,11 +166,11 @@ The directory "git-papers" is now our working directory.
 ~~~
 $ ls .git
 ~~~
-{: .language-bash}
+
 ~~~
 branches  config  description  HEAD  hooks  info  objects refs
 ~~~
-{: .output}
+
 The `.git` directory contains Git's configuration files. Be careful not to
 accidentally delete this directory!
 
@@ -183,7 +183,7 @@ we will start by adding the author names and a title, then save the file.
 $ nano journal.md
 # Add author names and paper title
 ~~~
-{: .language-bash}
+
 
 > ## Accessing files from the command line
 
@@ -192,7 +192,7 @@ $ nano journal.md
 > JupyterHub also contains a native text editor that we can use to edit these files.
 > That is because these are normal files which are also accessible from the file browser on any operating system (e.g. Windows explorer),
 > and by other programs.
-{: .callout}
+
 
 `git status` allows us to find out about the current status
 of files in the repository. So we can run,
@@ -200,7 +200,7 @@ of files in the repository. So we can run,
 ~~~
 $ git status
 ~~~
-{: .language-bash}
+
 ~~~
 On branch master
 
@@ -213,7 +213,7 @@ journal.md
 
 nothing added to commit but untracked files present (use "git add" to track)
 ~~~
-{: .output}
+
 
 Information about what Git knows about the directory is displayed. We are on
 the `master` branch, which is the default branch in a Git repository
@@ -233,7 +233,7 @@ To tell Git about the file, we will use the `git add` command:
 $ git add journal.md
 $ git status
 ~~~
-{: .language-bash}
+
 ~~~
 On branch master
 
@@ -244,7 +244,7 @@ Changes to be committed:
 
       	new file:   journal.md
 ~~~
-{: .output}
+
 
 Now our file is listed underneath where it says **Changes to be committed**.
 
@@ -256,7 +256,7 @@ The staging area can be viewed as a "loading dock", a place to hold files we hav
 added, or changed, until we are ready to tell Git to record those changes in the
 repository.
 
-![The staging area](../fig/git-staging-area.svg)
+![The staging area](./figs/git-staging-area.svg)
 
 ## Commit changes
 
@@ -268,7 +268,7 @@ $ git commit
 # Type a commit message: "Add title and authors"
 # Save the commit message and close your text editor (nano, notepad etc.)
 ~~~
-{: .language-bash}
+
 
 Our default editor will now pop up. Why? Well, Git can automatically figure out
 that directories and files are committed, and by whom (thanks to the information
@@ -282,7 +282,7 @@ If we save our commit message **and exit the editor**, Git will now commit our f
 1 file changed, 2 insertions(+) Add title and authors
 create mode 100644 journal.md
 ~~~
-{: .output}
+
 
 This output shows the number of files changed and the number of lines inserted
 or deleted across all those files. Here, we have changed (by adding) 1 file and
@@ -293,12 +293,12 @@ Now, if we look at its status,
 ~~~
 $ git status
 ~~~
-{: .language-bash}
+
 ~~~
 On branch master
 nothing to commit, working directory clean
 ~~~
-{: .output}
+
 
 our file is now in the repository.
 The output from the `git status` command means that we have a clean directory
@@ -311,13 +311,13 @@ section.
 $ nano journal.md
 # Write introduction section
 ```
-{: .language-bash}
+
 If we now run,
 
 ~~~
 $ git status
 ~~~
-{: .language-bash}
+
 
 we see changes not staged for commit section and our file is marked as
 modified:
@@ -332,7 +332,7 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
-{: .output}
+
 
 This means that a file Git knows about has been modified by us but
 has not yet been committed. So we can add it to the staging area and then
@@ -342,7 +342,7 @@ commit the changes:
 $ git add journal.md
 $ git commit							# "Write introduction"
 ~~~
-{: .language-bash}
+
 Note that in this case we used `git add` to put journal.md to the staging
 area. Git already knows this file should be tracked but doesn't know if we want
 to commit the changes we made to the file  in the repository and hence we have
@@ -358,14 +358,14 @@ want to reuse:
 $ mkdir common
 $ nano common/references.txt					# Add a reference
 ~~~
-{: .language-bash}
+
 
 We will also add a citation in our introduction section (in journal.md).
 
 ~~~
 $ nano journal.md 						# Use reference in introduction
 ~~~
-{: .language-bash}
+
 
 Now we need to record our work in the repository so we need to make a commit.
 First we tell Git to track the references.
@@ -375,7 +375,7 @@ We can actually tell Git to track everything in the given sub-directory:
 $ git add common						# Track everything currently in the 'common' directory
 $ git status							# Verify that common/references.txt is now tracked
 ~~~
-{: .language-bash}
+
 
 All files that are in *common* are now tracked.  We would also have to add
 journal.md in the staging area. But there is a shortcut. We can use
@@ -385,10 +385,10 @@ that have been modified".
 ~~~
 $ git commit -am "Reference J Bloggs and add references file" 	# Add and commit all tracked files
 ~~~
-{: .language-bash}
+
 and Git will add, then commit, both the directory and the file.
 
 In order to add all tracked files to the staging area, use `git commit -a`
 (which may be very useful if you edit e.g. 10 files and now you want to commit all of them).
 
-![The Git commit workflow](../fig/git-committing.svg)
+![The Git commit workflow](./figs/git-committing.svg)
