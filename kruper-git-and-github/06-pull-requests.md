@@ -37,7 +37,7 @@ But as a contributor, pull requests provide a path to engage with the community.
 - Make changes, and push them to your repository on GitHub
 - Request that the owner of the repository you *forked* pulls in your changes
 
-![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](../fig/github-diagram.png)
+![Conceptual illustration of a pull request - image adapted from [here](http://acrl.ala.org/techconnect/post/coding-collaboration-on-github)](./figs/github-diagram.png)
 
 ## Advice for submitting Pull Requests
 
@@ -89,4 +89,3 @@ In either case, your PR will update automatically once you have pushed your comm
 > 5. The owner of the original repository gets a notification that someone
 > created a pull request - the request can be reviewed, commented and merged in
 > (or not) via GitHub.
-{: .challenge}

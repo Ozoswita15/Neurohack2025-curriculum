@@ -69,7 +69,7 @@ so we can do the following:
 ```
 $ git remote add origin https://github.com/<USERNAME>/git-papers.git
 ```
-{: .language-bash}
+
 
 This line sets up an alias `origin`,
 to correspond to the URL of our new repository on GitHub.
@@ -82,7 +82,7 @@ Start by generating a key:
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-{: .language-bash}
+
 
 Save the file to its default location and protect it with a password. Then:
 
@@ -90,7 +90,7 @@ Save the file to its default location and protect it with a password. Then:
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
-{: .language-bash}
+
 
 
 To add this key to your ssh configuration.
@@ -107,7 +107,7 @@ Now we can execute the following:
 ```
 $ git push -u origin master
 ```
-{: .language-bash}
+
 ```
 Counting objects: 32, done.
 Delta compression using up to 8 threads.
@@ -118,7 +118,7 @@ To https://github.com/emdupre/git-papers.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
-{: .output}
+
 
 This **pushes** our `master` branch to the remote repository, (named via the alias `origin`) and creates a new `master` branch in the remote repository.
 
@@ -136,7 +136,7 @@ Let's push each of our local branches into our remote repository:
 ```
 $ git push origin branch_name
 ```
-{: .language-bash}
+
 
 The branch should now be created in our GitHub repository.
 
@@ -145,7 +145,7 @@ To list all branches (local and remote):
 ```
 $ git branch -a
 ```
-{: .language-bash}
+
 
 > ## Deleting branches (for information only)
 > **Don't do this now.** This is just for information.
@@ -155,8 +155,8 @@ $ git branch -a
 > $ git branch -d <branch_name>			# For local branches
 > $ git push origin --delete <branch_name>	# For remote branches
 > ```
-> {: .language-bash}
-{: .callout}
+> 
+
 
 ### Cloning a remote repository
 
@@ -168,7 +168,7 @@ But before that step,
 $ cd ..
 $ rm -rf git-papers
 ```
-{: .language-bash}
+
 
 Gulp! We've just wiped our local repository!
 But, because we've pushed to GitHub, we have still have a copy!
@@ -177,7 +177,7 @@ We can just copy the repository down using `git clone`:
 ```
 $ git clone https://github.com/<USERNAME>/git-papers.git
 ```
-{: .language-bash}
+
 ```
 Cloning into 'git-papers'...
 remote: Counting objects: 32, done.
@@ -186,7 +186,7 @@ remote: Total 32 (delta 7), reused 32 (delta 7), pack-reused 0
 Unpacking objects: 100% (32/32), done.
 Checking connectivity... done.
 ```
-{: .output}
+
 
 Cloning creates an exact copy of the repository. By default it creates
 a directory with the same name as the name of the repository.
@@ -197,13 +197,13 @@ Now, if we change into *git-papers* we can see that we have our repository,
 $ cd git-papers
 $ git log
 ```
-{: .language-bash}
+
 and we can see our Git configuration files too:
 
 ```
 $ ls -A
 ```
-{: .language-bash}
+
 
 In order to see the other branches locally, we can check them out as before:
 
@@ -211,7 +211,7 @@ In order to see the other branches locally, we can check them out as before:
 $ git branch -r					# Show remote branches
 $ git checkout paperWJohn			# Check out the paperWJohn branch
 ```
-{: .language-bash}
+
 
 ### Push changes to a remote repository
 
@@ -224,7 +224,7 @@ $ nano journal.md				# Add results section
 $ git add journal.md				# Stage changes
 $ git commit
 ```
-{: .language-bash}
+
 
 Having done that, how do we send our changes back to the remote repository?
 We can do this by *pushing* our changes:
@@ -232,7 +232,7 @@ We can do this by *pushing* our changes:
 ```
 $ git push origin master
 ```
-{: .language-bash}
+
 
 If we now check our GitHub page we should be able to see our new changes under
 the *Commit* tab.
@@ -243,5 +243,5 @@ type:
 ```
 $ git remote -v
 ```
-{: .language-bash}
-{: .language-bash}
+
+

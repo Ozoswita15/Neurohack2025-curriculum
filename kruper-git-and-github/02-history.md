@@ -24,7 +24,7 @@ We can review the changes that we made using:
 $ nano journal.md		# Add second reference to introduction
 $ git diff journal.md		# View changes to file
 ~~~
-{: .language-bash}
+
 
 This shows the difference between the latest copy in the repository and the
 unstaged changes we have made.
@@ -43,7 +43,7 @@ Now commit the change we made by adding the second reference:
 $ git add journal.md
 $ git commit			# "Reference second paper in introduction"
 ```
-{: .language-bash}
+
 
 ### Looking at our history
 
@@ -53,7 +53,7 @@ changes will be displayed at the top):
 ~~~
 $ git log
 ~~~
-{: .language-bash}
+
 
 ```
 commit 4dd7f5c948fdc11814041927e2c419283f5fe84c
@@ -68,7 +68,7 @@ Date:   Mon Jun 26 10:14:30 2017 +0100
 
     Add author and title
 ```
-{: .output}
+
 
 The output shows (on separate lines):
 - the commit identifier (also called revision number) which
@@ -87,14 +87,14 @@ earlier commit:
 ~~~
 $ git diff COMMITID		# View differences between current version and COMMITID
 ~~~
-{: .language-bash}
+
 
 And, to see changes between two commits:
 
 ~~~
 $ git diff OLDER_COMMITID NEWER_COMMITID
 ~~~
-{: .language-bash}
+
 
 Using our commit identifiers we can set our working directory to contain the
 state of the repository as it was at any commit. So, let's go back to the very
@@ -104,7 +104,7 @@ first commit we made,
 $ git log
 $ git checkout INITIAL_COMMITID
 ~~~
-{: .language-bash}
+
 
 We will get something like this:
 
@@ -122,7 +122,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 
 HEAD is now at 21cfbde... Add title and authors
 ~~~
-{: .output}
+
 
 If we look at `journal.md` we'll see it's our very first version. And if we
 look at our directory,
@@ -130,11 +130,11 @@ look at our directory,
 ~~~
 $ ls
 ~~~
-{: .language-bash}
+
 ~~~
 journal.md
 ~~~
-{: .output}
+
 
 then we see that our `common` directory is gone. But, rest easy, while it's
 gone from our working directory, it's still in our repository! We can jump back
@@ -143,18 +143,18 @@ to the latest commit by doing:
 ~~~
 $ git checkout master
 ~~~
-{: .language-bash}
+
 
 And `common` will be there once more,
 
 ~~~
 $ ls
 ~~~
-{: .language-bash}
+
 ~~~
 common journal.md
 ~~~
-{: .output}
+
 So we can get any version of our files from any point in time. In other words,
 we can set up our working directory back to any stage it was when we made
 a commit!
@@ -168,4 +168,4 @@ To discard any changes we make, we can just checkout master again.
 > Avoid creating a Git repository within another Git repository.
 > Nesting repositories in this way causes the 'outer' repository to
 > track the contents of the 'inner' repository - things will get confusing!
-{: .callout}
+
