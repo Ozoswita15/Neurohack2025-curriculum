@@ -135,31 +135,25 @@ i.e. the `--global` commands above are only required once per computer.
 
 We will be working with a simple example in this tutorial. It will be a paper
 that we will first start writing as a single author and then work on it further
-with one of our colleagues.
+with one of our colleagues. We will call the repository `git-papers`.
 
- First, let's create a directory within your home directory:
+ First, let's create a repository online using Github's graphical user
+ interface (GUI): [Creating and Managing Repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
+After creating the repository on GitHub, we'll clone it to our local machine:
 ```
 $ cd								# Switch to your home directory.
 $ pwd								# Print working directory (output should be /home/jovyan)
-$ mkdir git-papers
+$ git clone <repository-url> git-papers  # Replace <repository-url> with the actual URL of your GitHub repository, this can be found in the URL
 $ cd git-papers
 ```
-
-
-Now, we need to set up this directory up to be a Git repository (or "initiate
-the repository"):
-
-~~~
-$ git init
-~~~
 
 ~~~
 Initialized empty Git repository in /home/user/git-papers/.git/
 ~~~
 
 
-The directory "git-papers" is now our working directory.
+The directory `git-papers` is now our working directory and is already set up as a Git repository.
 
  If we look in this directory, we'll find a `.git` directory:
 
