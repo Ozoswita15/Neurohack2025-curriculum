@@ -144,7 +144,7 @@ After creating the repository on GitHub, we'll clone it to our local machine:
 ```
 $ cd								# Switch to your home directory.
 $ pwd								# Print working directory (output should be /home/jovyan)
-$ git clone <repository-url> git-papers  # Replace <repository-url> with the actual URL of your GitHub repository, this can be found in the URL
+$ git clone git@github.com:<git-username>/git-papers.git git-papers  # Replace <git-username> with your actual username, which can also be found in the URL of your GitHub repository
 $ cd git-papers
 ```
 
