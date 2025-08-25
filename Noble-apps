@@ -1,0 +1,26 @@
+TOOLS!
+
+BrainEffeX: fMRI Effect Size Explorer
+Web: https://neuroprismlab.shinyapps.io/effect_size_shiny/
+
+Shearer et al., 2025
+
+fMRI Empirical Power Estimator
+Matlab: https://github.com/neuroprismlab/Power_Calculator
+
+Local CSF Correction
+Python: https://github.com/AlexFischbach/local_csf_pipeline
+
+Constrained Network-based Statistic & Benchmarking
+Matlab: https://github.com/SNeuroble/NBS_benchmarking
+
+Noble, Mejia, Zalesky, & Scheinost, 2022
+
+Multifactor ICC
+Matlab: https://github.com/SNeuroble/Multifactor_ICC
+
+Noble et al., 2017
+
+BioImage Suite Web: fast & portable image analysis
+Web: http://bisweb.yale.edu/
+ (Papademetris & Scheinost)
